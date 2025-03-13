@@ -44,7 +44,7 @@ func (c *Client) Login(force bool) error {
 	if err != nil {
 		return err
 	}
-	req.Header.Set("Accept", "application/json")
+	c.setHeaders(req)
 
 	resp, err := c.client.Do(req)
 	if err != nil {
